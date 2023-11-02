@@ -235,13 +235,7 @@ input[type="submit"]:hover {
 					<h3 > </h3>
 					<div class="student-grids">
 						<div class="col-md-6 student-grid">
-							<div class="box" id="box1">
-								<div class="box-header" style="font-size: 25px;">
-									Our Objectives
-									<span class="down-arrow" id="downArrow1">&#9660;</span>
-								</div>
-								<div class="box-content" id="boxContent1">
-								
+							<p align="justify">Our objectives include: </p>
 								<ul class="grid-part">
 									<li><i class="glyphicon glyphicon-ok-sign"> </i>Equipping participants with practical skills and knowledge through our training programs. </li>
 									<li><i class="glyphicon glyphicon-ok-sign"> </i>Facilitating job placement for graduates through our strong industry connections. </li>
@@ -250,43 +244,18 @@ input[type="submit"]:hover {
                                     
 								</ul>
                             <br/>
-								</div>
-							</div>
-							<div class="box" id="box1">
-								<div class="box-header" style="font-size: 25px;">
-									Vision, Mission, and Values
-									<span class="down-arrow" id="downArrow1">&#9660;</span>
-								</div>
-								<div class="box-content" id="boxContent1">
-									<p align="justify"> </p>
+                            <p align="justify">Vision, Mission, and Values: </p>
                             <ul class="grid-part">
                                 <li><i class="glyphicon glyphicon-ok-sign"> </i>Vision: To empower individuals with the knowledge and skills needed for successful careers and lifelong learning.  </li>
                                 <li><i class="glyphicon glyphicon-ok-sign"> </i>Mission: Our mission is to provide accessible, affordable, and industry-relevant training that leads to employment and career advancement. </li>
                                 <li><i class="glyphicon glyphicon-ok-sign"> </i>Values: We are committed to excellence, inclusivity, innovation, and continuous improvement in all our endeavours. </li>
                                 
                             </ul>
-                            <br/>
-								</div>
-							</div>
-							<div class="box" id="box1">
-								<div class="box-header" style="font-size: 25px;">
-									Sub Branches
-									<span class="down-arrow" id="downArrow1">&#9660;</span>
-								</div>
-								<div class="box-content" id="boxContent1">
-									<p align="justify"> </p>
-                            <ul class="grid-part">
-                                <li><i class="glyphicon glyphicon-ok-sign"> </i>RK Placement (JOBSZONENOW)</li>
-                                <li><i class="glyphicon glyphicon-ok-sign"> </i>RK Consultancy </li>
-                                <li><i class="glyphicon glyphicon-ok-sign"> </i>RK Financial Services</li>
-                                
-                            </ul>
-                            <br/>
-								</div>
-							</div>
-							<img src="./images/about logo.jpg" class="img-responsive move-up">
+							
+							<!--<img src="./images/about logo.jpg" class="img-responsive move-up">-->
                             <a href="./Documents/Gateway- proposal prospects.pdf" target="_blank"><button type="button" class="btn btn-primary" >Download Brochure</button></a></div><br/>
 						</div>
+						
 						 <div class="col-md-6 student-grid">
 							<h2 style="color: #333; text-align: center ;">Register for the Next Batch</h2>
 								<form action="process_registration.php" method="post" style="background-color: #fff;max-width: 400px;margin: 0 auto;padding: 20px;border: 1px solid #ddd;border-radius: 5px;box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);">
@@ -464,43 +433,8 @@ input[type="submit"]:hover {
 	});
 </script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-<script>
-const boxes = document.querySelectorAll('.box');
-const downArrows = document.querySelectorAll('.down-arrow');
-const boxContents = document.querySelectorAll('.box-content');
-const infoText = document.getElementById('infoText');
-
-boxes.forEach((box, index) => {
-    const downArrow = downArrows[index];
-    const boxContent = boxContents[index];
-
-    box.addEventListener('click', () => {
-        box.classList.toggle('opened');
-        boxContent.style.display = box.classList.contains('opened') ? 'block' : 'none';
-
-        // Hide content of other boxes
-        boxes.forEach((otherBox, otherIndex) => {
-            if (otherIndex !== index) {
-                otherBox.classList.remove('opened');
-                boxContents[otherIndex].style.display = 'none';
-            }
-        });
-
-        if (box.classList.contains('opened')) {
-            infoText.textContent = `You opened Box ${index + 1}`;
-        } else {
-            infoText.textContent = 'Info about opened box will appear here.';
-        }
-    });
-    
-    downArrow.addEventListener('click', (event) => {
-        // Prevent the click event from propagating to the box element
-        event.stopPropagation();
-        box.classList.toggle('opened');
-        boxContent.style.display = box.classList.contains('opened') ? 'block' : 'none';
-    });
-});
-</script>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="custom.js"></script>
 </body>
         
 
